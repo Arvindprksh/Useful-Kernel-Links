@@ -1,0 +1,81 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script type="text/javascript">
+	var app = angular.module('myapp',[]);
+
+	app.controller('myctrl',function($scope){
+		$scope.x = [
+		{link:"https://gist.github.com/lj50036/967c13b46f83819830167e6b502f531d",name:"FastBoot Usage"},
+		{link:"http://free-electrons.com/blog/mkenvimage-uboot-binary-env-generator/",name:"mkenvimage tool"},
+		{link:"https://stackoverflow.com/questions/31244862/what-is-the-use-of-spl-secondary-program-loader",name:"U boot program loading sequence and what is what ! "},
+		{link:"http://conf.e-consystems.net/display/eSOMiMX7/U-Boot+execution+sequence",name:"Uboot program logical sequence"},
+		{link:"http://conf.e-consystems.net/display/eSOMiMX7/Dynamic+Debugging+using+kernel+print+statement",name:"Dynamic Debugging in Linux kernel"},
+
+		]
+		function add(a,b){
+			for(var i=0;i<$scope.x.length;i++)
+			{
+				console.log($scope.x[i].link);
+				if($scope.x[i].link == a)
+					return;
+				else 
+					continue;
+			}
+			
+			$scope.x.push({link:a,name:b});
+
+		}
+		add("https://community.nxp.com/docs/DOC-101842","Boot Solely with imx_usb_loader and buildroot");
+		add("https://en.opensuse.org/openSUSE:Imx_usb_loader","imx usb loader usage - 1");
+		add("https://boundarydevices.com/u-boot-usb-mass-storage-gadget/","UMS gadget - How to use");
+		add("https://serverfault.com/questions/184321/linux-console-programmatical-detection-of-which-device-a-usb-storage-is-assign","Programmatic detection of where a usb storage is assigned to ");
+		add("https://nnc3.com/mags/LJ_1994-2014/LJ/246/11725.html","Uboot Environment variables ");
+		add("http://variwiki.com/index.php?title=U-Boot_features#General_U-Boot_commands","General UBoot Commands ");
+		add("https://stackoverflow.com/questions/31244862/what-is-the-use-of-spl-secondary-program-loader","Use of SPL");
+		add("https://stackoverflow.com/questions/59838/check-if-a-directory-exists-in-a-shell-script","Checking if a directory exists using Shell script");
+		add("http://processors.wiki.ti.com/index.php/Booting_Linux_kernel_using_U-Boot","Booting Linux using Uboot");
+		add("http://bhami.com/rosetta.html#software","Shell Commands of All Unix based OSes");
+		add("https://www.kernel.org/doc/Documentation/mmc/mmc-dev-parts.txt","MMC boot partition");
+		add("https://stackoverflow.com/questions/22322304/image-vs-zimage-vs-uimage","UImage vs zImage");
+		add("https://buildroot.org/downloads/manual/manual.html#customize-store-package-config","Build root User Manual");
+		add("https://gitlab.com/help/user/markdown","Gitlab Markdown");
+		add("https://community.nxp.com/thread/351669","Booting linux via SD .. Environment variables");
+		add("https://stackoverflow.com/questions/6363441/check-if-a-file-exists-with-wildcard-in-shell-script","Check if a file exists using shell");
+		add("http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc5","Bash Programming how to");
+		add("https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions","Bash Reference Manuel");
+		add("https://buildroot.org/downloads/manual/manual.html","Buildroot User manual");
+		add("http://free-electrons.com/doc/training/buildroot/buildroot-labs.pdf","Buildroot labs");
+		add("https://www.kernel.org/doc/html/v4.11/admin-guide/dynamic-debug-howto.html","Dynamic Debug Kernel Documentation");
+		add("https://www.systutorials.com/docs/linux/man/8-sfdisk/","sfdisk man page linux");
+		add("https://suntong.github.io/blogs/2015/12/25/use-sfdisk-to-partition-disks/","Use sfdisk to partition disks");
+		add("https://askubuntu.com/questions/525767/what-does-an-exec-command-do","Exec command in linux");
+		add("https://unix.stackexchange.com/questions/4126/what-is-the-exact-difference-between-a-terminal-a-shell-a-tty-and-a-con/4132#4132","Difference between Shell , tty  and a console");
+		add("http://processors.wiki.ti.com/index.php/Linux_Core_U-Boot_User%27s_Guide","Uboot user guide");
+		add("https://www.linux.com/news/udev-introduction-device-management-modern-linux-system","Introduction to udev");
+		add("https://www.devroom.io/2009/10/26/how-to-create-and-apply-a-patch-with-git/","Applying Patches in Git");
+		add("https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging","Git Branching and Merging");
+		add("https://stackoverflow.com/questions/32174348/how-to-build-uimage","Build uImage from zImage");
+		add("https://mkrmr.wordpress.com/2010/05/14/vim-tip-visual-block-editing/","Visual block editing");
+		$scope.x.sort(function(a,b){
+			var nameA=a.name.toLowerCase(),nameB=b.name.toLowerCase();
+			if(nameA<nameB)
+				return -1;
+			if(nameA>nameB)
+				return 1;
+			return 0;
+		});
+
+
+	});
+
+</script>
+</head>
+<body>
+ <div ng-app="myapp" ng-controller="myctrl">
+ 	<div ng-repeat="y in x">
+ 		<a href="{{y.link}}">{{y.name}}</a><br>
+ 	</div>
+ </div>
+</body>
+</html>
