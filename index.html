@@ -5,12 +5,7 @@
 	var app = angular.module('myapp',[]);
 
 	app.controller('myctrl',function($scope){
-		$scope.x = [
-		{link:"https://stackoverflow.com/questions/31244862/what-is-the-use-of-spl-secondary-program-loader",name:"U boot program loading sequence and what is what ! "},
-		{link:"http://conf.e-consystems.net/display/eSOMiMX7/U-Boot+execution+sequence",name:"Uboot program logical sequence"},
-		{link:"http://conf.e-consystems.net/display/eSOMiMX7/Dynamic+Debugging+using+kernel+print+statement",name:"Dynamic Debugging in Linux kernel"},
-
-		]
+		$scope.x = []
 		function add(a,b){
 			for(var i=0;i<$scope.x.length;i++)
 			{
@@ -24,6 +19,9 @@
 			$scope.x.push({link:a,name:b});
 
 		}
+		add("https://stackoverflow.com/questions/31244862/what-is-the-use-of-spl-secondary-program-loader","U boot program loading sequence and what is what ! ");
+		add("http://conf.e-consystems.net/display/eSOMiMX7/U-Boot+execution+sequence","Uboot program logical sequence");
+		add("http://conf.e-consystems.net/display/eSOMiMX7/Dynamic+Debugging+using+kernel+print+statement","Dynamic Debugging in Linux kernel");
 		add("https://gist.github.com/lj50036/967c13b46f83819830167e6b502f531d","FastBoot Usage");
 		add("http://free-electrons.com/blog/mkenvimage-uboot-binary-env-generator/","mkenvimage tool");
 		add("https://community.nxp.com/docs/DOC-101842","Boot Solely with imx_usb_loader and buildroot");
@@ -58,6 +56,9 @@
 		add("https://stackoverflow.com/questions/32174348/how-to-build-uimage","Build uImage from zImage");
 		add("https://mkrmr.wordpress.com/2010/05/14/vim-tip-visual-block-editing/","Visual block editing");
 		add("https://blogs.gnome.org/simos/2009/04/18/git-clones-vs-shallow-git-clones/","Clones vs Shallow clones");
+		add("https://stackoverflow.com/questions/17563726/how-to-see-the-changes-in-a-commit","Seeing changes in a commit");
+		add("http://developer.toradex.com/knowledge-base/build-u-boot-and-linux-kernel-from-source-code","Build Uboot and Linux from Source Toradex forums ");
+		add("http://elixir.free-electrons.com/linux/v4.1.5/source","Linux Source Free Electrons");
 		$scope.x.sort(function(a,b){
 			var nameA=a.name.toLowerCase(),nameB=b.name.toLowerCase();
 			if(nameA<nameB)
