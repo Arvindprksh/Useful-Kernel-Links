@@ -7,18 +7,21 @@
 	app.controller('myctrl',function($scope){
 		$scope.x = []
 		function add(a,b){
-			for(var i=0;i<$scope.x.length;i++)
-			{
-				console.log($scope.x[i].link);
-				if($scope.x[i].link == a)
-					return;
-				else 
-					continue;
-			}
-			
-			$scope.x.push({link:a,name:b});
+				for(var i=0;i<$scope.x.length;i++)
+				{
+					console.log($scope.x[i].link);
+					if($scope.x[i].link == a)
+						return;
+					else 
+						continue;
+				}
+				
+				$scope.x.push({link:a,name:b});
 
 		}
+
+	// Resources
+
 		add("https://stackoverflow.com/questions/31244862/what-is-the-use-of-spl-secondary-program-loader","U boot program loading sequence and what is what ! ");
 		add("http://conf.e-consystems.net/display/eSOMiMX7/U-Boot+execution+sequence","Uboot program logical sequence");
 		add("http://conf.e-consystems.net/display/eSOMiMX7/Dynamic+Debugging+using+kernel+print+statement","Dynamic Debugging in Linux kernel");
@@ -59,6 +62,12 @@
 		add("https://stackoverflow.com/questions/17563726/how-to-see-the-changes-in-a-commit","Seeing changes in a commit");
 		add("http://developer.toradex.com/knowledge-base/build-u-boot-and-linux-kernel-from-source-code","Build Uboot and Linux from Source Toradex forums ");
 		add("http://elixir.free-electrons.com/linux/v4.1.5/source","Linux Source Free Electrons");
+		add("http://trac.gateworks.com/wiki/linux/OTG#g_mass_storage-USBMassStorageDevice","USB-OTG Support in Linux kernel");
+		add("http://www.linux-usb.org/gadget/file_storage.html","Backing Storage for the Mass Storage Gadget");
+		add("https://www.kernel.org/doc/Documentation/usb/mass-storage.txt","USB Mass Storage");
+		add("http://processors.wiki.ti.com/index.php/Kernel_-_Common_Problems_Booting_Linux#Problem_.231_-_No_more_output_is_seen_on_the_console_after_.22Starting_Kernel....22","Console stuck in Starting Kernel...");
+
+	// Sorts the list		
 		$scope.x.sort(function(a,b){
 			var nameA=a.name.toLowerCase(),nameB=b.name.toLowerCase();
 			if(nameA<nameB)
@@ -69,8 +78,7 @@
 		});
 
 
-	});
-
+});
 </script>
 </head>
 <body>
