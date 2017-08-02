@@ -6,8 +6,6 @@
 
 	app.controller('myctrl',function($scope){
 		$scope.x = [
-		{link:"https://gist.github.com/lj50036/967c13b46f83819830167e6b502f531d",name:"FastBoot Usage"},
-		{link:"http://free-electrons.com/blog/mkenvimage-uboot-binary-env-generator/",name:"mkenvimage tool"},
 		{link:"https://stackoverflow.com/questions/31244862/what-is-the-use-of-spl-secondary-program-loader",name:"U boot program loading sequence and what is what ! "},
 		{link:"http://conf.e-consystems.net/display/eSOMiMX7/U-Boot+execution+sequence",name:"Uboot program logical sequence"},
 		{link:"http://conf.e-consystems.net/display/eSOMiMX7/Dynamic+Debugging+using+kernel+print+statement",name:"Dynamic Debugging in Linux kernel"},
@@ -26,6 +24,8 @@
 			$scope.x.push({link:a,name:b});
 
 		}
+		add("https://gist.github.com/lj50036/967c13b46f83819830167e6b502f531d","FastBoot Usage");
+		add("http://free-electrons.com/blog/mkenvimage-uboot-binary-env-generator/","mkenvimage tool");
 		add("https://community.nxp.com/docs/DOC-101842","Boot Solely with imx_usb_loader and buildroot");
 		add("https://en.opensuse.org/openSUSE:Imx_usb_loader","imx usb loader usage - 1");
 		add("https://boundarydevices.com/u-boot-usb-mass-storage-gadget/","UMS gadget - How to use");
@@ -57,6 +57,7 @@
 		add("https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging","Git Branching and Merging");
 		add("https://stackoverflow.com/questions/32174348/how-to-build-uimage","Build uImage from zImage");
 		add("https://mkrmr.wordpress.com/2010/05/14/vim-tip-visual-block-editing/","Visual block editing");
+		add("https://blogs.gnome.org/simos/2009/04/18/git-clones-vs-shallow-git-clones/","Clones vs Shallow clones");
 		$scope.x.sort(function(a,b){
 			var nameA=a.name.toLowerCase(),nameB=b.name.toLowerCase();
 			if(nameA<nameB)
