@@ -15,10 +15,23 @@
 					else 
 						continue;
 				}
-				
 				$scope.x.push({link:a,name:b});
-
 		}
+
+		function order(){
+			$scope.list = { letters = [] };
+			for (var i = 0; i < $scope.x.length; i++) {
+				var itmLetter= $scope.x.name.substring(0,1).toUpperCase();
+				if (!(itmLetter in list)){
+					$scope.list[itmLetter] = [];
+					$scope.list.letters.push(itmLetter);
+				}
+				$scope.list[itmLetter].push($scope.x);
+			}
+			$scope.list.letters.sort();
+		}
+
+
 
 	// Resources
 
@@ -66,6 +79,13 @@
 		add("http://www.linux-usb.org/gadget/file_storage.html","Backing Storage for the Mass Storage Gadget");
 		add("https://www.kernel.org/doc/Documentation/usb/mass-storage.txt","USB Mass Storage");
 		add("http://processors.wiki.ti.com/index.php/Kernel_-_Common_Problems_Booting_Linux#Problem_.231_-_No_more_output_is_seen_on_the_console_after_.22Starting_Kernel....22","Console stuck in Starting Kernel...");
+		add("https://stackoverflow.com/questions/22929065/difference-between-linux-loadable-and-built-in-modules","Difference between loadable modules and builtin modules");
+		add("https://www.gnu.org/software/tar/manual/html_section/tar_26.html","Tar User manual");
+		add("https://www.maketecheasier.com/how-to-compress-and-split-files-in-ubuntu/","Compress and Split large files in ubuntu");
+		add("http://www.hostingadvice.com/how-to/untar-file-linuxubuntu/","Untar a file for gzip , bzip compression");
+		add("https://github.com/NXPmicro/imx-uuc/blob/master/linuxrc","Using configfs to configure uuc");
+		add("https://community.nxp.com/thread/441563","Usage of UTP command");
+
 
 	// Sorts the list		
 		$scope.x.sort(function(a,b){
@@ -78,13 +98,16 @@
 		});
 
 
+
 });
 </script>
 </head>
 <body>
  <div ng-app="myapp" ng-controller="myctrl">
- 	<div ng-repeat="y in x">
- 		<a href="{{y.link}}">{{y.name}}</a><br>
+ 	<div ng-repeat="y in list.letters">
+ 		<div ng-repeat=" z in list[y]">
+ 			<a href="{{z.link}}">{{z.name}}</a><br>
+ 		</div>
  	</div>
  </div>
 </body>
