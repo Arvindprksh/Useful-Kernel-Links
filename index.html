@@ -9,7 +9,7 @@
 		function add(a,b){
 				for(var i=0;i<$scope.x.length;i++)
 				{
-					console.log($scope.x[i].link);
+					//console.log($scope.x[i].link);
 					if($scope.x[i].link == a)
 						return;
 					else 
@@ -19,16 +19,32 @@
 		}
 
 		function order(){
-			$scope.list = { letters = [] };
+			$scope.classes = [];
+			$scope.class= [];
+			letters=[]
 			for (var i = 0; i < $scope.x.length; i++) {
-				var itmLetter= $scope.x.name.substring(0,1).toUpperCase();
-				if (!(itmLetter in list)){
-					$scope.list[itmLetter] = [];
-					$scope.list.letters.push(itmLetter);
+				var first = $scope.x[i].name.substring(0,1).toUpperCase();
+				//console.log(first);
+				if(letters.indexOf(first) != -1){
 				}
-				$scope.list[itmLetter].push($scope.x);
+				else{
+					
+					$scope.classes[first]=[];
+					$scope.classes[first].links=[];
+					$scope.classes[first].letter=first;
+					letters.push(first);
+				}
+				$scope.classes[first].links.push($scope.x[i]);
+				//console.log($scope.classes);
 			}
-			$scope.list.letters.sort();
+			var i=0;
+			for ( x in $scope.classes ){
+				$scope.class[i] = {}
+				$scope.class[i].links = $scope.classes[x].links;
+				$scope.class[i].letter= $scope.classes[x].letter;
+				i++;
+			}
+			console.log($scope.class);
 		}
 
 
@@ -86,7 +102,6 @@
 		add("https://github.com/NXPmicro/imx-uuc/blob/master/linuxrc","Using configfs to configure uuc");
 		add("https://community.nxp.com/thread/441563","Usage of UTP command");
 
-
 	// Sorts the list		
 		$scope.x.sort(function(a,b){
 			var nameA=a.name.toLowerCase(),nameB=b.name.toLowerCase();
@@ -97,17 +112,42 @@
 			return 0;
 		});
 
+		order();
+
+
 
 
 });
 </script>
+
+<style type="text/css">
+	.block{
+		background-color: #222930;
+		margin: 10px;
+		padding: 5px;
+	}
+	body{
+		background-color: #e4e4e4;
+	}
+	li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+		color: #E9E9E9;
+	}
+
+</style>
 </head>
 <body>
  <div ng-app="myapp" ng-controller="myctrl">
- 	<div ng-repeat="y in list.letters">
- 		<div ng-repeat=" z in list[y]">
- 			<a href="{{z.link}}">{{z.name}}</a><br>
- 		</div>
+ 	<div class="block" ng-repeat="y in class">
+ 		<ul>
+	 		<h1> {{ y.letter }} </h1>
+	 		<li ng-repeat=" z in y.links">
+	 			<a href="{{z.link}}">{{z.name}}</a><br>
+	 		</li>
+ 		</ul>
  	</div>
  </div>
 </body>
