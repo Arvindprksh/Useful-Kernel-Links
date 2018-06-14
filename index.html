@@ -12,7 +12,7 @@
 					//console.log($scope.x[i].link);
 					if($scope.x[i].link == a)
 						return;
-					else 
+					else
 						continue;
 				}
 				$scope.x.push({link:a,name:b});
@@ -28,7 +28,7 @@
 				if(letters.indexOf(first) != -1){
 				}
 				else{
-					
+
 					$scope.classes[first]=[];
 					$scope.classes[first].links=[];
 					$scope.classes[first].letter=first;
@@ -277,11 +277,11 @@
 		add("https://stackoverflow.com/questions/20609760/convert-h264-video-to-raw-yuv-format","FFMPEG:Converting any video to YUV format ");
 		add("https://stackoverflow.com/questions/8697300/how-to-create-a-device-in-dev-automatically-upon-loading-of-the-kernel-module-f","Linux Kernel: Create device node using mknod");
 		add("https://lwn.net/Articles/448502/","Linux Devices:Platform devices and device trees");
-		add("https://www.kernel.org/doc/Documentation/devicetree/usage-model.txt","Linux Devices: Device Tree Usage");	
+		add("https://www.kernel.org/doc/Documentation/devicetree/usage-model.txt","Linux Devices: Device Tree Usage");
 		add("https://google-developers.appspot.com/chart/interactive/docs/","Google Charts: About Google Chart APIs");
 		add("https://askubuntu.com/questions/991946/how-can-i-get-help-on-terminal-commands?newsletter=1&nlcode=631506%7c68f6","Bash:Opening man pages using other viewers");
 		add("https://explainshell.com/","Bash Tools:Website that explains commands");
-	    add("http://doctrina.org/How-RSA-Works-With-Examples.html","Cryptography : How RSA work with example");	
+	    add("http://doctrina.org/How-RSA-Works-With-Examples.html","Cryptography : How RSA work with example");
         add("https://www.loc.gov/preservation/digital/formats/digformatspecs/APPNOTE%2820120901%29_Version_6.3.3.txt","zip: Zip file format in detail  1 ");
         add("https://users.cs.jmu.edu/buchhofp/forensics/formats/pkzip.html","zip:File format in detail 2");
         add("https://pkware.cachefly.net/webdocs/APPNOTE/APPNOTE-2.0.txt","zip: zip in detail 3");
@@ -309,11 +309,35 @@
 		add("https://serverfault.com/questions/7503/how-to-determine-if-a-bash-variable-is-empty","Bash: Determining whether a string is empty");
         add("https://askubuntu.com/questions/67718/how-do-i-disable-a-touchpad-using-the-command-line","Ubuntu Tweaks: How to disable touchpad");
         add("http://wiki.kldp.org/wiki.php/SoftIrqsAndTasklets","Linux Kernel: tasklets and softirqs");
-	add("https://unix.stackexchange.com/questions/30370/how-to-get-the-pid-of-the-last-executed-command-in-shell-script","Bash: Process ID of last executed command");
-	add("https://askubuntu.com/questions/445979/how-to-mount-sd-card-image-created-with-dd","Linux: How to mount an sdcard image using mount command");
-	add("http://en.cppreference.com/w/c/language/array_initialization","C: Initialising arrays using indexes inside declaration");
-        add("https://www.e-consystems.com/Articles/Android/Android-RIL-Architecture.asp","Android : RIL Architecture in Android");
-	// Sorts the list		
+	add("https://unix.stackexchange.com/questions/30370/how-to-get-the-pid-of-the-last-executed-command-in-shell-script","Bash: Process ID of last executed command")
+	add("https://askubuntu.com/questions/445979/how-to-mount-sd-card-image-created-with-dd","Linux: How to mount an sdcard image using mount command")
+	add("http://en.cppreference.com/w/c/language/array_initialization","C: Initialising arrays using indexes inside declaration")
+	add("https://gcc.gnu.org/onlinedocs/gcc/Diagnostic-Pragmas.html","C: Diagnostic pragmas")
+	add("https://askubuntu.com/questions/1018692/set-permanent-command-shortcut-in-terminal-to-cd-to-downloads","Bash: Difference between sourcing a script and running it")
+	add("https://linuxconfig.org/how-to-use-getopts-to-parse-a-script-options","Bash: Getopts usage")
+	add("https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_12_02.html","Bash: Traps")
+	add("https://stackoverflow.com/questions/559581/casting-a-function-pointer-to-another-type","C: Typecasting a function pointer")
+	add("https://linux.die.net/man/1/cdecl","Bash Tools: cdecl- A tool to check complicated C declarations")
+	add("https://stackoverflow.com/questions/8392228/complicated-right-to-left-rule-when-defining-a-variable","C: Left Right rule")
+	add("https://stackoverflow.com/questions/1587846/how-do-i-show-the-changes-which-have-been-staged","Git: Showing changes that have been staged ")
+	add("https://askubuntu.com/questions/1030099/how-to-print-text-in-the-terminal-as-if-its-being-typed","Bash: Display text as if it is being typed ");
+	add("https://unix.stackexchange.com/questions/144924/how-to-create-a-message-box-from-the-command-line","Bash: GUI tools in Bash");
+	add("https://stackoverflow.com/questions/5377297/how-to-manually-call-another-target-from-a-make-target","Make: Manually running a target");
+	add("https://askubuntu.com/questions/930994/how-to-make-a-progress-bar-work-in-zenity","Zenity: Progress Bars");
+	add("http://bruceblinn.com/linuxinfo/MemoryBarriers.html","C: Types of barriers");
+	add("https://www.gravitywell.co.uk/latest/how-to/posts/how-to-set-up-ctags-for-sublime-text-editor-2/","Ctags: Installing Ctags in sublime text");
+	add("https://stackoverflow.com/questions/2342826/how-to-pipe-stderr-and-not-stdout","Bash: Piping stderr only");
+	add("https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file","Bash: Different Ways of saving terminal output");
+	add("https://askubuntu.com/questions/1035212/how-can-i-read-a-sh-file-while-it-is-working-but-deleted","Bash: Recovering a shell script that was deleted while execution");
+	add("https://stackoverflow.com/questions/7899119/what-does-s-mean-in-printf","C: %*.s in printf");
+	add("https://unix.stackexchange.com/questions/186577/what-are-the-some-name-o-cmd-files","Linux Build: Purpose of .o.cmd files in linux source")
+	add("http://www.keil.com/support/man/docs/armcc/armcc_chr1359124970859.htm","C: Weak function declarations")
+	add("https://askubuntu.com/questions/1042234/modifying-the-color-of-grep","grep: Modifying color of grep")
+	add("https://stackoverflow.com/questions/109710/how-do-the-likely-and-unlikely-macros-in-the-linux-kernel-work-and-what-is-t","C:Unlikely and Likely explanation");
+	add("https://stackoverflow.com/questions/1064361/unable-to-show-a-git-tree-in-terminal","Git: Graph in git log ")
+    add("https://www.e-consystems.com/Articles/Android/Android-RIL-Architecture.asp","Android : RIL Architecture in Android");
+    add("https://github.com/codeauroraforum/mfgtools/wiki/Manufacturing-Tool-V2-(MFGTool2)-Update-Command-List-(UCL)-User-Guide","MFG: UCL file in MFG tool")
+    // Sorts the list
 		$scope.x.sort(function(a,b){
 			var nameA=a.name.toLowerCase(),nameB=b.name.toLowerCase();
 			if(nameA<nameB)
